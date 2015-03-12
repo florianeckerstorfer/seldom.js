@@ -1,0 +1,22 @@
+.seldom__refine-selection {
+  position: absolute;
+  margin-top: 5px;
+  font: 14px 'Helvetica Neue', Helvetica, Arial, sans-serif; }
+
+.seldom__refine-selection a {
+  display: inline-block;
+  margin-right: 5px;
+  padding: 5px;
+  background: linear-gradient(#606c88 10%, #3f4c6b 90%);
+  border-radius: 3px;
+  box-shadow: 1px 1px 2px black;
+  color: #fff;
+  cursor: pointer; }
+
+.seldom__refine-selection a:hover {
+  background: #666; }
+
+.seldom__refine-selection a.inactive {
+  background: #666;
+  color: #999;
+  cursor: default; }
