@@ -37,6 +37,8 @@ Seldom.prototype.select = function(target, cb) {
         }
     }
     var clickHandler = function (e) {
+        e.preventDefault();
+        e.stopPropagation();
         for (var i = elements.length - 1; i >= 0; i--) {
             elements[i].removeEventListener('mousemove', mouseMoveHandler);
             elements[i].removeEventListener('click', clickHandler);

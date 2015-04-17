@@ -14,8 +14,7 @@
     }
 }(window, function factory() {
 
-var Seldom = function(domlight, clicklight, options) {
-    console.log(options);
+var Seldom = function (domlight, clicklight, options) {
     this.domlight = domlight || new Domlight();
     this.clicklight = clicklight || new Domlight();
     this.options = this.constructor.defaultOptions;
@@ -27,7 +26,7 @@ var Seldom = function(domlight, clicklight, options) {
 Seldom.defaultOptions = {
 };
 
-Seldom.prototype.getDeepestElementWithContent = function(elem) {
+Seldom.prototype.getDeepestElementWithContent = function (elem) {
     var needle = elem.textContent,
         candidate = elem;
     for (var i = elem.childNodes.length - 1; i >= 0; i--) {
@@ -54,6 +53,8 @@ Seldom.prototype.select = function(target, cb) {
         }
     }
     var clickHandler = function (e) {
+        e.preventDefault();
+        e.stopPropagation();
         for (var i = elements.length - 1; i >= 0; i--) {
             elements[i].removeEventListener('mousemove', mouseMoveHandler);
             elements[i].removeEventListener('click', clickHandler);
