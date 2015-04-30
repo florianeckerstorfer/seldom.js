@@ -56,8 +56,8 @@ Seldom.prototype.select = function(target, cb) {
         e.preventDefault();
         e.stopPropagation();
         for (var i = elements.length - 1; i >= 0; i--) {
-            elements[i].removeEventListener('mousemove', mouseMoveHandler);
-            elements[i].removeEventListener('click', clickHandler);
+            elements[i].removeEventListener('mousemove', mouseMoveHandler, false);
+            elements[i].removeEventListener('click', clickHandler, true);
         };
         that.domlight.unlightAll(elements);
         that.clicklight.unlightAll(elements);
@@ -80,7 +80,7 @@ Seldom.prototype.refineSelection = function(elem, cb) {
     var positionTools = function () {
         var position = that.computePosition(elem);
         tools.style.left = position.x1+'px';
-        tools.style.top = position.y2+'px';
+        tools.style.top  = position.y2+'px';
     };
     var newElement = function (newElem) {
         elem = newElem;
@@ -163,7 +163,6 @@ Seldom.prototype.refineSelection = function(elem, cb) {
             prevSibling.classList.remove('inactive');
         }
         if (elem.children[0]) {
-            console.log(elem.children[0]);
             firstChild.classList.remove('inactive');
         } else {
             firstChild.classList.add('inactive');
