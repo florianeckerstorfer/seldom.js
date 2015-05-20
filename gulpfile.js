@@ -2,7 +2,7 @@ var gulp        = require('gulp'),
     concat      = require('gulp-concat')
     sass        = require('gulp-sass'),
     sourcemaps  = require('gulp-sourcemaps'),
-    uglify      = require('gulp-uglifyjs'),
+    uglify      = require('gulp-uglify'),
     browserSync = require('browser-sync'),
     reload      = browserSync.reload;
 
@@ -33,7 +33,8 @@ gulp.task('js-dist', function () {
     gulp.src(scripts)
         .pipe(concat('seldom.js'))
         .pipe(gulp.dest('./dist'))
-        .pipe(uglify('seldom.min.js'))
+        .pipe(concat('seldom.min.js'))
+        .pipe(uglify())
         .pipe(gulp.dest('./dist'));
 });
 

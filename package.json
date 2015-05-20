@@ -1,13 +1,9 @@
 {
   "name": "seldom.js",
   "version": "1.0.3",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "author": "",
-  "license": "ISC",
+  "description": "An utility to allow users to visually select DOM elements.",
+  "author": "Florian Eckerstorfer",
+  "license": "MIT",
   "dependencies": {
     "domlight.js": "^1.0.2"
   },
@@ -18,7 +14,6 @@
     "gulp-jslint": "^0.2.2",
     "gulp-sass": "^1.3.3",
     "gulp-sourcemaps": "^1.5.2",
-    "gulp-uglify": "^1.2.0",
-    "gulp-uglifyjs": "^0.6.2"
+    "gulp-uglify": "^1.2.0"
   }
 }
