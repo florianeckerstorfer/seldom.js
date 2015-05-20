@@ -1,6 +1,6 @@
 {
   "name": "seldom.js",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "An utility to allow users to visually select DOM elements.",
   "author": "Florian Eckerstorfer",
   "license": "MIT",
