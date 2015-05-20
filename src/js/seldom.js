@@ -53,9 +53,6 @@ Seldom.prototype.select = function(target, cb) {
         var element = elements[i];
         element.addEventListener('click', clickHandler, true);
         element.addEventListener('mousemove', mouseMoveHandler, false);
-        // this.addEvent(element, 'mouseenter', mouseOverHandler, false);
-        // element.addEventListener('mouseover', mouseOverHandler, false);
-        // element.addEventListener('mouseout',  mouseOutHandler, false);
     };
 };
 
