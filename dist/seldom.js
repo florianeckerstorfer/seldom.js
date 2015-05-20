@@ -69,9 +69,6 @@ Seldom.prototype.select = function(target, cb) {
         var element = elements[i];
         element.addEventListener('click', clickHandler, true);
         element.addEventListener('mousemove', mouseMoveHandler, false);
-        // this.addEvent(element, 'mouseenter', mouseOverHandler, false);
-        // element.addEventListener('mouseover', mouseOverHandler, false);
-        // element.addEventListener('mouseout',  mouseOutHandler, false);
     };
 };
 
@@ -79,17 +76,19 @@ Seldom.prototype.refineSelection = function(elem, cb) {
     var that = this;
     var positionTools = function () {
         var position = that.computePosition(elem),
-            y2       = position.y2;
+            y2       = position.y2,
+            x1       = position.x1;
         if (y2 > window.pageYOffset+window.innerHeight-30) {
             y2 = position.y1-35;
         }
         if (y2 < window.pageYOffset) {
             y2 += 35;
         }
+        x1 = x1 <= 0 ? 0 : x1;
         console.log("top", y2);
         console.log("pageYOffset", window.pageYOffset);
         console.log("innerHeight", window.innerHeight);
-        tools.style.left = position.x1+'px';
+        tools.style.left = x1+'px';
         tools.style.top  = y2+'px';
     };
     var newElement = function (newElem) {
