@@ -69,9 +69,7 @@ Seldom.prototype.refineSelection = function(elem, cb) {
             y2 += 35;
         }
         x1 = x1 <= 0 ? 0 : x1;
-        console.log("top", y2);
-        console.log("pageYOffset", window.pageYOffset);
-        console.log("innerHeight", window.innerHeight);
+        y2 = y2 <= 0 ? 0 : y2;
         tools.style.left = x1+'px';
         tools.style.top  = y2+'px';
     };
