@@ -21,6 +21,14 @@
             <p>No, I'm Santa Claus! I am the man with no name, Zapp Brannigan! I'm sure those windmills will keep them cool. And until then, I can never die? Ok, we'll go deliver this crate like professionals, and then we'll go ride the bumper cars. Would you censor the Venus de Venus just because you can see her spewers?</p>
             <p>Hey, whatcha watching? Why would I want to know that? Kids have names? Oh, all right, I am. But if anything happens to me, tell them I died robbing some old man. For one beautiful night I knew what it was like to be a grandmother. Subjugated, yet honored.</p>
         </div>
+        <h3>Similar Elements</h3>
+        <ul>
+            <li class="similar-element item item-1">Item 1</li>
+            <li class="similar-element item item-2">Item 2</li>
+            <li class="similar-element item item-3">Item 3</li>
+            <li class="similar-element item item-4">Item 4</li>
+            <li class="similar-element item item-5">Item 5</li>
+        </ul>
     </div>
     <div id="box2" class="box">
         <h2>War Is the H-Word</h2>
@@ -56,7 +64,8 @@
     var selection = document.querySelector('#selection');
     var domlight = new Domlight({'borderColor': 'rgb(255,0,0)'});
     var clicklight = new Domlight({'borderColor': 'rgb(0,255,0)'});
-    var seldom = new Seldom(domlight, clicklight);
+    var similarlight = new Domlight({'borderColor': 'rgb(0,0,255)'});
+    var seldom = new Seldom(domlight, clicklight, similarlight);
     console.log('example 1', seldom.getDeepestElementWithContent(document.querySelector('#example1')));
     console.log('example 2', seldom.getDeepestElementWithContent(document.querySelector('#example2')));
     var elem3 = document.querySelector('#example3');
@@ -75,9 +84,13 @@
     }
 
     function refine() {
-        seldom.refineSelection(elem3, function (elem) {
+        seldom.refineSelection(elem3, function (elem, similarElements) {
             elem3 = elem;
-            selection.innerHTML = niceElementName(elem);
+            selection.innerHTML = niceElementName(elem) + ' + ' + similarElements.map(function (simElem) {
+              return niceElementName(simElem);
+            }).join(', ');
+            console.log('Element', elem);
+            console.log('Similar Elements', similarElements);
         });
     }
 
