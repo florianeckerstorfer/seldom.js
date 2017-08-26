@@ -243,6 +243,16 @@ Seldom.prototype.findSimilar = function (element) {
           }
         }
     }
+    if (elements.length === 0) {
+        var selector = '';
+        var iterator = element;
+        while (iterator.parentNode) {
+            selector = iterator.tagName + (selector.length > 0 ? '>' + selector : '');
+            iterator = iterator.parentNode;
+        }
+        console.log('selector', selector);
+        elements = document.querySelectorAll(selector);
+    }
     return elements;
 };
 

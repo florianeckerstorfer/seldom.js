@@ -14,3 +14,15 @@ files.
 1. Download dependencies: `npm install`
 2. Build for development (includes source maps): `gulp build`
 3. Build for distribution: `gulp dist`
+
+Change Log
+----------
+
+### Version 1.2.0 (26 August 2017)
+
+- Find similar elements based on tag name and depth in DOM
+
+### Version 1.1.0 (26 August 2017)
+
+- Find similar elements based on class name
+
